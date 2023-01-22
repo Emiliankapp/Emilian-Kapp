@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilian.ch</title>
+</head>
+<body class="darkmode">
+
+
+    <button class="darkmodebutton" id="dark_mode_button">
+        <ion-icon name="moon-outline" class="darkicon"></ion-icon>
+       <span></span>
+    </button>
+    <div class="hallo">
+    <h2>Hello and welcome!
+        <br>
+        I am
+    </h2>
+    </div>
+
+
+    <div class="title">
+    <h1>Emilian Kapp.</h1>
+    </div>
+
+
+    <div class="text">
+    <h4 class="text">I am a student at the school Hohlbein in Basel and
+        i am in the seventh grade.<br>  In my free time I like to learn<br>
+         new things like for example I programmed this website myself<br>
+          with JavaScript HTML and CSS, I also like to read and play football.</h4>    
+     </div>
+
+    <div class="emilian">     
+     <img class="emilian" src="emilian.JPG" width="400px">
+     </div>
+
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+     <div class="fürtzunichts">
+     <button type="button" class="mailbutton">
+     <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">        
+        <ion-icon name="mail-outline" class="mail"></ion-icon>
+    </a>
+        <span></span>
+     </button>
+    </div>
+
+
+    <div class="container">
+        <button type="github" class="githubbuton">
+        <a href="https://github.com/Emiliankapp">        
+            <ion-icon name="logo-github" class="icongithub"></ion-icon>
+       </a>
+           <span></span>
+        </button>
+    </div>
+   
+
+     
+    
+
+</body>
+<script>
+
+    const dark_mode_button = document.getElementById("dark_mode_button");
+    dark_mode_button.addEventListener("click", () =>{
+    document.body.classList.toggle("dark_mode");
+ })
+
+</script>
+<style>
+
+    .darkmodebutton{
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 10px;
+        clip-path: circle();
+        
+    }
+
+    .darkmodebutton:hover{
+        color: #9e9ea1;
+        text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #f09,
+      0 0 80px #f09,
+      0 0 90px #f09,
+      0 0 100px #f09,
+      0 0 150px #f09;
+    }
+
+    :root{
+        --primary-color: white;
+        --secondary-color: black;
+    }
+
+    .dark_mode{
+        --primary-color: rgba(5, 2, 27, 0.918);
+        --secondary-color:white;
+    }
+
+    .fürtzunichts,button{
+        display: grid;
+        place-items: center;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        padding: 0px;
+        border: none;
+        color: var(--primary-color);
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .githubbuton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icongithub{
+        background: none;
+        padding: 0px;
+        border: none;
+        color: var(--primary-color);
+    }
+
+    .darkicon{
+        width: 30px;
+    }
+
+
+
+    .mail{
+        width: 50px;
+        margin-top: 0;
+        color: var(--secondary-color);
+        height: 50px;
+    }
+
+    .icongithub{
+        width: 50px;
+        margin: 0;
+        color: var(--secondary-color);
+        height: 50px;
+    }
+
+    .hallo{
+        margin-top: 40px;
+        font-family: 'Roboto', sans-serif;
+        font-size: medium;
+        color: var(--secondary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .text{
+        font-family: 'Roboto', sans-serif;
+        color: var(--secondary-color);
+        margin-left: 40px;
+        margin-right: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title{
+        font-family: 'Roboto', sans-serif;
+        font-size: larger;
+
+        background: #121FCF;
+        background: linear-gradient(to left, #121FCF 48%, #1FFFF8 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+            }
+
+        
+    .title:hover{
+        background: #121FCF;
+        background: linear-gradient(to right, #121FCF 30%, #1FFFF8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .emilian{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        clip-path: circle();
+    }
+
+
+    body{
+        background-color: var(--primary-color);
+    }
+
+</style>
+
+</html>
