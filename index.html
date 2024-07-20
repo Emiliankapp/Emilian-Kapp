@@ -9,30 +9,41 @@
 <body class="darkmode">
 
 
-        <div class="off-screen-menu">
-            <ul>
-                <li>home </li>
-                <li>about</li>
-                <li>contact</li>
-            </ul>
-        </div>
+    <div class="off-screen-menu">
+        <ul>
+            <div class="options">
+                <li>
+                    <a href="">Home</a>
+                        
+                </li>
+
+                <li>
+                    <a href="myProjects.html">Projects</a>
+                </li>
+
+                <li>
+                    <a href="Contact.html">Contact</a>
+                </li>
+            </div>
+        </ul>
+        <!-- Close button -->
+        <button class="close-menu">Close</button>
+    </div>
 
 
-    <nav>
-        <div class="ham-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-    </nav>
-
-    
-
-    <button class="darkmodebutton" id="dark_mode_button">
-        <ion-icon name="moon-outline" class="darkicon"></ion-icon>
-       <span></span>
-    </button>
+        <nav>
+            <div class="header-container">
+                <button class="darkmodebutton" id="dark_mode_button">
+                    <ion-icon name="moon-outline" class="darkicon"></ion-icon>
+                    <span></span>
+                </button>
+                <div class="ham-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
 
     <div class="emilian">     
         <img class="emilian" src="emilian.JPG" width="330px">
@@ -53,14 +64,19 @@
 
 
     <div class="text">
-    <h4 class="text">I am an E-train student in eighth grade. I enjoy the following at school: logical thinking in maths
+    <h4 class="text">I am an E-train pupil in eighth grade. 
+        
+        I enjoy the following at school: 
+    
+        logical thinking in maths
         logical thinking, general knowledge in RZG, movement in sport, language skills in English
         language skills, experimenting in NT and creativity in BG. 
-        <br>
+        
         <br>
         I like being on the computer a lot, I watch a lot of computer science videos on YouTube and
         always learning new programming languages. I also read books about programming and
-        learn a lot about computer science in general.</h4>    
+        learn a lot about computer science in general.
+    </h4>    
      </div>
 
      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -68,7 +84,7 @@
 
 
 
-    <div class="container">                                                                                         <div class="fürtzunichts">
+    <div class="container">     <div class="fürtzunichts">
         <button type="button" class="mailbutton">
         <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">        
            <ion-icon name="mail-outline" class="mail"></ion-icon>
@@ -98,90 +114,144 @@
  })
 
 
-     const hamMenu = document.querySelector(".ham-menu");
-
+const hamMenu = document.querySelector(".ham-menu");
 const offScreenMenu = document.querySelector(".off-screen-menu");
 
 hamMenu.addEventListener("click", () => {
-  hamMenu.classList.toggle("active");
-  offScreenMenu.classList.toggle("active");
+    // Toggle the active class on both the menu button and the off-screen menu
+    hamMenu.classList.toggle("active");
+    offScreenMenu.classList.toggle("active");
 });
+
+document.querySelector('.close-menu').addEventListener('click', () => {
+    document.querySelector('.off-screen-menu').classList.remove('active');
+});
+
 
 </script>
 <style>
 
-    .off-screen-menu{
+    .header-container {
+        display: flex;
+        justify-content: space-between; /* Positions children elements on opposite sides */
+        width: 100%; /* Ensures the container takes up the full width of the nav */
+        padding: 1rem; /* Adds some padding around the container */
+        box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    }
+
+    .options{
+        font-family: 'Roboto', sans-serif;
+        color: #6F86FF;
+        text-decoration: none;
+    }
+
+    a{
+        color: #6F86FF;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: #921919;
+    }
+
+    /* off-screen-menu */
+    .off-screen-menu {
         color: #fff;
-        background-color: rgb(34, 37, 49);
+        background-color:  rgb(34, 37, 49);
         height: 100vh;
         width: 100%;
-        max-width: 200px;
+        max-width: 250px;
         position: fixed;
         top: 0;
         right: -450px;
         display: flex;
         flex-direction: column;
+        align-items: center;    
         justify-content: center;
-        align-items: center;
         text-align: center;
         font-size: 3rem;
-        transition: 1s ease;
+        transition: .3s ease;
+        z-index: 1000;
     }
 
-     .off-screen-menu.active {
+
+    .off-screen-menu.active {
         right: 0;
-
     }
 
+
+
+    /* nav */
     nav {
         padding: 1rem;
         display: flex;
         background-color: rgb(34, 37, 49);
     }
 
+
+
+    /* ham menu */
     .ham-menu {
         height: 50px;
-        width: 50px;
+        width: 40px;
         margin-left: auto;
         position: relative;
     }
 
-    .ham-menu span{
+    .ham-menu span {
         height: 5px;
         width: 100%;
-        background-color: #6f86ff;
+        background-color: #6F86FF;
         border-radius: 25px;
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate( -50%, -50%);
-        transition: .1s ease;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
     }
 
-    .ham-menu span:nth-child(1){
+    .ham-menu span:nth-child(1) {
         top: 25%;
-
     }
 
-    .ham-menu span:nth-child(3){
+    .ham-menu span:nth-child(3) {
         top: 75%;
     }
 
-    .ham-menu.active span:nth-child(1){
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
+
+    .close-menu {
+        position: absolute;
+        top: 10px; /* Adjust based on your design */
+        right: 10px; /* Adjust based on your design */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem; /* Adjust size as needed */
+        color: #6F86FF; /* Match your theme */
+        display: flex;
+        align-items: right;    
+        justify-content: right;
+        text-align: right;
+        font-family: 'Roboto', sans-serif;
     }
 
-    .ham-menu.active span:nth-child(2){
-        opacity: 0;
 
+    .ham-menu span {
+        transition: background-color 0.3s ease; /* Optional: Smooth transition for the color change */
     }
 
-    .ham-menu.active span:nth-child(3){
-        top: 50%;
-        transform: translate(-50%, 50%) rotate(-45deg);
+    .ham-menu:hover span {
+        background-color: #ccc; /* Change the color to light gray when hovered */
     }
 
+
+    .close-menu {
+        transition: color 0.3s ease; /* Optional: Smooth transition for the color change */
+    }
+
+    .close-menu:hover {
+        color: #ccc; /* Change the color to red when hovered */
+    }
 
     .darkmodebutton{
         background-color: var(--secondary-color);
@@ -256,11 +326,20 @@ hamMenu.addEventListener("click", () => {
         height: 50px;
     }
 
+    .mail:hover{
+        color: #921919;
+    }
+
     .icongithub{
         width: 50px;
         margin: 0;
         color: var(--secondary-color);
         height: 50px;
+    }
+
+
+    .icongithub:hover{
+        color: #921919;
     }
 
     .hallo{
@@ -275,12 +354,11 @@ hamMenu.addEventListener("click", () => {
     .text{
         font-family: 'Roboto', sans-serif;
         color: var(--secondary-color);
-        margin-left: 10px;
-        margin-right: 5px;
         margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
     }
 
     .title{
@@ -311,6 +389,8 @@ hamMenu.addEventListener("click", () => {
         justify-content: center;
         align-items: top;
         clip-path: circle();
+        position: relative;
+        z-index: 500;
     }
 
 
@@ -321,3 +401,4 @@ hamMenu.addEventListener("click", () => {
 </style>
 
 </html>
+
