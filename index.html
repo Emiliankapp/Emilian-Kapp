@@ -9,42 +9,12 @@
 <body class="darkmode">
 
 
-    <div class="off-screen-menu">
-        <ul>
-            <div class="options">
-                <li>
-                    <a href="">Home</a>
-                        
-                </li>
 
-                <li>
-                    <a href="myProjects.html">Projects</a>
-                </li>
-
-                <li>
-                    <a href="Contact.html">Contact</a>
-                </li>
-            </div>
-        </ul>
-        <!-- Close button -->
-        <button class="close-menu">Close</button>
-    </div>
-
-
-        <nav>
-            <div class="header-container">
                 <button class="darkmodebutton" id="dark_mode_button">
                     <ion-icon name="moon-outline" class="darkicon"></ion-icon>
                     <span></span>
                 </button>
-                <div class="ham-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
-
+                
     <div class="emilian">     
         <img class="emilian" src="emilian.JPG" width="330px">
         </div>
@@ -114,144 +84,11 @@
  })
 
 
-const hamMenu = document.querySelector(".ham-menu");
-const offScreenMenu = document.querySelector(".off-screen-menu");
-
-hamMenu.addEventListener("click", () => {
-    // Toggle the active class on both the menu button and the off-screen menu
-    hamMenu.classList.toggle("active");
-    offScreenMenu.classList.toggle("active");
-});
-
-document.querySelector('.close-menu').addEventListener('click', () => {
-    document.querySelector('.off-screen-menu').classList.remove('active');
-});
 
 
 </script>
 <style>
 
-    .header-container {
-        display: flex;
-        justify-content: space-between; /* Positions children elements on opposite sides */
-        width: 100%; /* Ensures the container takes up the full width of the nav */
-        padding: 1rem; /* Adds some padding around the container */
-        box-sizing: border-box; /* Includes padding and border in element's total width and height */
-    }
-
-    .options{
-        font-family: 'Roboto', sans-serif;
-        color: #6F86FF;
-        text-decoration: none;
-    }
-
-    a{
-        color: #6F86FF;
-        text-decoration: none;
-    }
-
-    a:hover{
-        color: #921919;
-    }
-
-    /* off-screen-menu */
-    .off-screen-menu {
-        color: #fff;
-        background-color:  rgb(34, 37, 49);
-        height: 100vh;
-        width: 100%;
-        max-width: 250px;
-        position: fixed;
-        top: 0;
-        right: -450px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;    
-        justify-content: center;
-        text-align: center;
-        font-size: 3rem;
-        transition: .3s ease;
-        z-index: 1000;
-    }
-
-
-    .off-screen-menu.active {
-        right: 0;
-    }
-
-
-
-    /* nav */
-    nav {
-        padding: 1rem;
-        display: flex;
-        background-color: rgb(34, 37, 49);
-    }
-
-
-
-    /* ham menu */
-    .ham-menu {
-        height: 50px;
-        width: 40px;
-        margin-left: auto;
-        position: relative;
-    }
-
-    .ham-menu span {
-        height: 5px;
-        width: 100%;
-        background-color: #6F86FF;
-        border-radius: 25px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: .3s ease;
-    }
-
-    .ham-menu span:nth-child(1) {
-        top: 25%;
-    }
-
-    .ham-menu span:nth-child(3) {
-        top: 75%;
-    }
-
-
-    .close-menu {
-        position: absolute;
-        top: 10px; /* Adjust based on your design */
-        right: 10px; /* Adjust based on your design */
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 2rem; /* Adjust size as needed */
-        color: #6F86FF; /* Match your theme */
-        display: flex;
-        align-items: right;    
-        justify-content: right;
-        text-align: right;
-        font-family: 'Roboto', sans-serif;
-    }
-
-
-    .ham-menu span {
-        transition: background-color 0.3s ease; /* Optional: Smooth transition for the color change */
-    }
-
-    .ham-menu:hover span {
-        background-color: #ccc; /* Change the color to light gray when hovered */
-    }
-
-
-    .close-menu {
-        transition: color 0.3s ease; /* Optional: Smooth transition for the color change */
-    }
-
-    .close-menu:hover {
-        color: #ccc; /* Change the color to red when hovered */
-    }
 
     .darkmodebutton{
         background-color: var(--secondary-color);
